@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Memória</title>
+
+    <style>
+
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    
+    body{
+        background-color: rgb(38, 216, 216);
+    }
+    
+    main{
+        height: 100vh;
+        background-image: linear-gradient(to bottom, rgb(185, 221, 241), rgb(20, 128, 190));
+        display: flex;
+    }
+    
+    header{
+        text-align: center;
+    }
+    
+    .carta:active{
+        transform: scale(0.97);
+        transition: transform .2s;
+    }
+    
+    .carta.flip{
+        transform: rotateY(180deg);
+    }
+    
+    .jogo-memoria{
+        height: 640px;
+        width: 640px;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        perspective: 10000px;
+    }
+    
+    .carta{
+        width: calc(25% - 10px);
+        height: calc(33.33% - 10px);
+        margin: 5px;
+        position: relative;
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
+        transform: scale(1);
+        transform-style: preserve-3d;
+        transition: transform .5s;
+    }
+    
+    .front-face{
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        position: absolute;
+        border-radius: 5px;
+        background-color: #8bc5f5;
+    }
+    
+    .back-face{
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        position: absolute;
+        border-radius: 5px;
+        background-color: #5d9bce;
+        backface-visibility: hidden;
+    }
+    
+    h1{
+        padding-left: 5px;
+        padding-right: 5px;
+        background-image: linear-gradient(to left, rgb(8, 190, 223), rgb(118, 165, 209));
+        color: rgb(63, 35, 28);
+        font-family: sans-serif;
+    }
+    
+    input{
+        background-color: rgb(170, 212, 247);
+        text-align: center;
+        color: black;
+        height: 40px;
+        width: 150px;
+        margin-top: 10px;
+        margin-left: 46%;
+        position: absolute;
+        border-radius: 15px;
+        margin-top: -10vh;
+    }
+    
+    </style>
+    
+</head>
+<body>
+    <header>
+        <h1>JOGO DA MEMÓRIA</h1>
+    </header>
+
+    <main>
+        <section class="jogo-memoria">
+
+            <div class="carta" data-framework="steve">
+                <img class="front-face"  src="imagens/abacaxi.png"
+                alt="Face da Carta">
+                <img class="back-face" src="imagens/verso2.jfif" alt="Verso da Carta">
+            </div>
+            <div class="carta" data-framework="steve">
+                <img class="front-face"  src="imagens/abacaxi.png"
+                alt="Face da Carta">
+                <img class="back-face" src="imagens/verso2.jfif" alt="Verso da Carta">
+            </div>
+
+
+
+            <div class="carta" data-framework="chad">
+                <img class="front-face"  src="imagens/acelora.png"
+                alt="Face da Carta">
+                <img class="back-face" src="imagens/verso2.jfif" alt="Verso da Carta">
+            </div>
+
+            <div class="carta" data-framework="chad">
+                <img class="front-face"  src="imagens/acelora.png"
+                alt="Face da Carta">
+                <img class="back-face" src="imagens/verso2.jfif" alt="Verso da Carta">
+            </div>
+
+
+
+            <div class="carta" data-framework="eredin">
+                <img class="front-face"  src="imagens/caja.png"
+                alt="Face da Carta">
+                <img class="back-face" src="imagens/verso2.jfif" alt="Verso da Carta">
+            </div>
+
+            <div class="carta" data-framework="eredin">
+                <img class="front-face"  src="imagens/caja.png"
+                alt="Face da Carta">
+                <img class="back-face" src="imagens/verso2.jfif" alt="Verso da Carta">
+            </div>
+
+
+
+            <div class="carta" data-framework="lebron">
+                <img class="front-face"  src="imagens/coco.png"
+                alt="Face da Carta">
+                <img class="back-face" src="imagens/verso2.jfif" alt="Verso da Carta">
+            </div>
+
+            <div class="carta" data-framework="lebron">
+                <img class="front-face"  src="imagens/coco.png"
+                alt="Face da Carta">
+                <img class="back-face" src="imagens/verso2.jfif" alt="Verso da Carta">
+            </div>
+
+
+
+            <div class="carta" data-framework="vasco">
+                <img class="front-face"  src="imagens/laranja.png"
+                alt="Face da Carta">
+                <img class="back-face" src="imagens/verso2.jfif" alt="Verso da Carta">
+            </div>
+
+            <div class="carta" data-framework="vasco">
+                <img class="front-face"  src="imagens/laranja.png"
+                alt="Face da Carta">
+                <img class="back-face" src="imagens/verso2.jfif" alt="Verso da Carta">
+            </div>
+
+
+
+            <div class="carta" data-framework="tyler">
+                <img class="front-face"  src="imagens/pinha.png"
+                alt="Face da Carta">
+                <img class="back-face" src="imagens/verso2.jfif" alt="Verso da Carta">
+            </div>
+
+            <div class="carta" data-framework="tyler">
+                <img class="front-face"  src="imagens/pinha.png"
+                alt="Face da Carta">
+                <img class="back-face" src="imagens/verso2.jfif" alt="Verso da Carta">
+            </div>
+        </section>
+
+    </main>
+
+    <input type="button" value="Reiniciar" onclick="window.location.reload()">
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
